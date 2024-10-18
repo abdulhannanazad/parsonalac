@@ -2,188 +2,53 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>expense</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>parsonal ac</title>
 </head>
 
 <body>
     <div class="slidebarbar">
-        <a href="#">dashboard</a>
-        <a href="#">expense</a>
-        <a href="#">income</a>
-        <a href="#">recomend</a>
-        <a href="#">savings</a>
-        <a href="#">lend/get</a>
-        <a href="#">report</a>
-        <a href="#">data manage</a>
+        <a href="index.html">dashboard</a>
+        <a href="expense.html">expense</a>
+        <a href="income.html">income</a>
+        <a href="recomrnd.html">recomend</a>
+        <a href="savings.html">savings</a>
+        <a href="lendget.html">lend/get</a>
     </div>
 
     <div class="contentbar">
-    <div class="form_div">
-      <?php if (isset($_GET['brows'])) {
-        $rwj = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM `expense` where `sl`='{$_GET['sl']}'"));
-      } ?>
 
-      <form method="post" autocomplete="off" class="saveForm">
-        <input name="srl" value="<?= $rwj['sl'] ?? ''; ?>" hidden />
-        <input name="aa" type="date" value="<?= $rwj['date'] ?? $date; ?>" />
+        <div class="labalebar">
+            <img src="">
+            <p>parsonal account management system</p>
+            <div class="social"></div>
+        </div>
 
-        <input name="bb" list="Description" value="<?= $rwj['description'] ?? ''; ?>" placeholder="description"
-          autofocus required />
-        <datalist id="Description">
-          <?php $rslt = mysqli_query($con, "SELECT `description` FROM `expense` GROUP BY `description` ORDER BY `description` ASC");
-          while ($rw = mysqli_fetch_assoc($rslt)) {
-            echo '<option>' . $rw['description'] . '</option>';
-          } ?>
-        </datalist>
+        <nav>
+        <a href="index.html">dashboard</a>
+        <a href="expense.html">expense</a>
+        <a href="income.html">income</a>
+        <a href="recomrnd.html">recomend</a>
+        <a href="savings.html">savings</a>
+        <a href="lendget.html">lend/get</a>
+        </nav>
 
-        <select name="cc">
-          <option value="<?= $rwj['purpose'] ?? $purpose; ?>">
-            <?= $rwj['purpose'] ?? $purpose; ?>
-          </option>
-          <?= $purposeList; ?>
-        </select>
 
-        <input name="dd" value="<?= $rwj['taka'] ?? $purpose; ?>" type="number" placeholder="taka" required />
-        <button name="savebtn">save</button>
-        <?php if (isset($_GET['brows'])) {
-          echo "<button name='updatebtn'>update</button>
-        <button name='cecuritybtn'>delete</button>";
-        } ?>
-      </form>
-    </div>
-  </div>
+<form action="" method="post">
+    <input type="date" name="" id="">
+    <input type="text" name="" id="">
+    <select name="" id="">
+        <option value="">list item</option>
+        <option value="">list item</option>
+    </select>
+    <input type="number" name="" id="">
+    <button>save</button>
+    <button>update</button>
+    <button>delete</button>
+</form>
 
-  <div class="rightdiv">
-    <h1>expense record</h1>
-    <form method="post" class="searchForm" style="display: inline-block;">
-      <input name="datea" type="date" value="<?= $srcDatea ?? $today; ?>" />
-      <input name="dateb" type="date" value="<?= $srcDateb ?? $today; ?>" />
-      <button name="searchButton">search</button>
-      <button name="allDataButton" id="allSearch">all</button>
-      <input id="myInput" placeholder="type anythings" type="search">
-    </form>
-
-    <div
-      style="display: inline-block; background-image: linear-gradient(175deg,red,green,blue); color: aliceblue; text-align: center;">
-      total:<input style="background-color: transparent; border: none;" id="expval"
-        value="<?= number_format($total) ?? 0; ?>" readonly>taka
-    </div>
-
-    <div class="tblHolder">
-      <table>
-        <tr>
-          <th>date</th>
-          <th>details</th>
-          <th>purpose</th>
-          <th>taka</th>
-          <th>edit</th>
-        </tr>
-        <?php $table = mysqli_query($con, $qry);
-        while ($row = mysqli_fetch_assoc($table)) { ?>
-          <tbody id="myTable">
-            <tr>
-              <td>
-                <?= date_format(date_create($row['date']), "d-M-y"); ?>
-              </td>
-              <td>
-                <?= $row['description']; ?>
-              </td>
-              <td>
-                <?= $row['purpose']; ?>
-              </td>
-              <td>
-                <?= number_format($row['taka']); ?>
-              </td>
-              <td><a href="expense.php?sl=<?= $row['sl']; ?>&brows">edit</a></td>
-            </tr>
-          </tbody>
-        <?php } ?>
-      </table>
-    </div>
-    <div class="msg">message div</div>
-
-    <script src="java/jquery.js"></script>
-    <script src="java/main.js"></script>
+    </div><!-- contentbar -->
 </body>
-
-<?php
-if ($_SERVER['REQUEST_METHOD'] === "POST") {
-  $srl = $_POST['srl'] ?? '';
-  $date = $_POST['aa'] ?? '';
-  $description = $_POST['bb'] ?? '';
-  $purpose = $_POST['cc'] ?? '';
-  $taka = $_POST['dd'] ?? '';
-  $name = $_POST['name'] ?? '';
-  $password = $_POST['password'] ?? '';
-
-  if (isset($_POST['savebtn'])) {
-    $_SESSION['expSaveForm'][0] = array('date' => $date, 'purpose' => $purpose);
-    $qry = "SELECT * FROM `expense` WHERE `date`='$date' and `description`='$description' and `purpose`='$purpose' and `taka`='$taka'";
-    $qrs = "INSERT INTO `expense`(`date`, `description`, `purpose`, `taka`) VALUES ('$date','$description','$purpose','$taka')";
-    checkData($con, $qry, $qrs);
-    header('Location:expense.php');
-  }
-
-  if (isset($_POST['updatebtn'])) {
-    if (checkUpdate($con, "SELECT * FROM `expense` WHERE `date`='$date' && `description`='$description' && `purpose`='$purpose' && `taka`='$taka'")) {
-      header('Location:expense.php');
-    } else {
-      updateData($con, "UPDATE `expense` SET `date`='$date',`description`='$description',`purpose`='$purpose',`taka`='$taka' WHERE `sl`='$srl'");
-      header('Location:expense.php');
-    }
-  }
-}
-
-if (isset($_POST['cecuritybtn'])) {
-  echo "<div class='cecurity-form'>
-  <form method='post'>
-    <h2>userName and password</h2>
-    <input name='srl' value='" . $srl . "' readonly>
-    <input name='name' value='hannan' placeholder='username'/>
-    <input name='password' value='0000' placeholder='password'/>
-    <button name='deletebtn'>yes</button>
-    <button name='blank'>no</button>
-  </form>
-  <div>";
-}
-
-if (isset($_POST['deletebtn'])) {
-  $rsl = mysqli_query($con, "SELECT * FROM `userlog` WHERE `name`='$name' AND `password`='$password'");
-  if (mysqli_num_rows($rsl) > 0) {
-    if (mysqli_query($con, "DELETE FROM `expense` WHERE `sl`='$srl'")) {
-      header('Location:expense.php');
-    }
-  } else {
-    echo ("<script>alert('Password Rong');
-        window.location.href = 'expense.php'; </script>");
-  }
-}
-?>
-
-<script>
-  function viewbox() {
-    $(".compare").show();
-  }
-
-  function compareCal() {
-    var cash = $("#cash").val();
-    var comval = $("#expval").val();
-    cash = parseFloat(cash);
-    comval = parseFloat(comval);
-    var calval = cash - comval;
-    if (cash > comval) {
-      $("#reult").text(calval + " thakbe");
-    } else {
-      $("#reult").text(calval + " lagbe");
-    }
-  }
-</script>
-
-<style>
-  #list1 {
-    background-color: white;
-    color: black;
-  }
-</style>
+</html>
