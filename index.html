@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard</title>
+    <meta http-equiv="refresh" content="15">
 </head>
 
 <body>
@@ -20,8 +21,70 @@
     </div>
 
     <div class="contentbar">
-
+        <nav>
+            <a href="#">dashboard</a>
+            <a href="#">expense</a>
+            <a href="#">income</a>
+            <a href="#">recomend</a>
+            <a href="#">savings</a>
+            <a href="#">lend/get</a>
+            <a href="#">report</a>
+            <a href="#">data manage</a>
+        </nav>
     </div>
 </body>
 
 </html>
+<style>
+    nav a::before {
+        content: "🌿 ";
+    }
+
+    a:hover {
+        background-color: blue;
+        color: white;
+    }
+
+    nav a {
+        color: rgb(0, 0, 0);
+        font-family: sans-serif;
+        text-transform: uppercase;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(73, 191, 124);
+    }
+
+    .slidebarbar a::before {
+        content: "✔ ";
+    }
+
+    .slidebarbar a {
+        display: block;
+        line-height: 30px;
+        color: white;
+        font-family: sans-serif;
+        text-transform: uppercase;
+    }
+
+    .slidebarbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 180px;
+        height: 100vh;
+        background-color: teal;
+        padding: 5px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all linear 0.5s;
+        text-decoration: none;
+    }
+</style>
