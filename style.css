@@ -30,6 +30,7 @@
 .labalebar p {
     padding: 5px;
     font-size: 20px;
+    text-transform: capitalize;
     text-align: center;
 }
 
@@ -72,6 +73,7 @@ nav {
     display: block;
     line-height: 30px;
     color: white;
+    font-family: sans-serif;
 }
 
 .slidebarbar {
