@@ -1,101 +1,167 @@
-   .cardfooter {
-        border-top: 1px solid cyan;
-        padding: 5px;
-    }
+.cardfooter {
+    border-top: 1px solid cyan;
+    padding: 5px;
+}
 
-    .cardbody {
-        padding: 5px 5px 50px 5px;
-        background-color: white;
-    }
+.cardbody {
+    padding: 5px 5px 50px 5px;
+    background-color: white;
+}
 
-    .cardtitle {
-        padding: 5px;
-        border-bottom: 1px solid cyan;
-        text-align: center;
-    }
+.cardtitle {
+    padding: 5px;
+    border-bottom: 1px solid cyan;
+    text-align: center;
+}
 
-    .card {
-        background-color: lightcyan;
-        border: 1px solid cyan;
-        border-radius: 5px;
-        margin: 10px;
-        width: 30%;
-    }
+.card {
+    background-color: lightcyan;
+    border: 1px solid cyan;
+    border-radius: 5px;
+    margin: 10px;
+    width: 30%;
+}
 
-    .cardholder {
-        display: flex;
-        flex-wrap: wrap;
-    }
+.cardholder {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-    .labalebar p {
-        padding: 5px;
-        font-size: 20px;
-        text-transform: capitalize;
-        text-align: center;
-    }
+.labalebar p {
+    padding: 5px;
+    font-size: 20px;
+    text-transform: capitalize;
+    text-align: center;
+}
 
-    .labalebar {
-        background-color: teal;
-        display: grid;
-        grid-template-columns: 33% 34% 33%;
-    }
+.labalebar {
+    background-color: teal;
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+}
 
-    .contentbar {
-        margin-left: 180px;
-    }
+.contentbar {
+    margin-left: 180px;
+}
 
-    nav a::before {
-        content: "🌿 ";
-    }
+nav a::before {
+    content: "🌿 ";
+}
 
-    a:hover {
-        background-color: blue;
-        color: white;
-    }
+a:hover {
+    background-color: blue;
+    color: white;
+}
 
-    nav a {
-        color: rgb(0, 0, 0);
-        font-family: sans-serif;
-        text-transform: uppercase;
-        padding: 10px;
-    }
+nav a {
+    color: rgb(0, 0, 0);
+    font-family: sans-serif;
+    text-transform: uppercase;
+    padding: 10px;
+}
 
-    nav {
-        display: flex;
-        justify-content: space-between;
-        background-color: rgb(73, 191, 124);
-        position: sticky;
-    }
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(73, 191, 124);
+    position: sticky;
+}
 
-    .slidebarbar a::before {
-        content: "✔ ";
-    }
+.slidebarbar a::before {
+    content: "✔ ";
+}
 
-    .slidebarbar a {
-        display: block;
-        line-height: 30px;
-        color: white;
-        font-family: sans-serif;
-        text-transform: uppercase;
-    }
+.slidebarbar a {
+    display: block;
+    line-height: 30px;
+    color: white;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
 
-    .slidebarbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 180px;
-        height: 100vh;
-        background-color: teal;
-        padding: 5px;
-    }
+.slidebarbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 100vh;
+    background-color: teal;
+    padding: 5px;
+}
 
-    a {
-        text-decoration: none;
-    }
+a {
+    text-decoration: none;
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        transition: all linear 0.5s;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    transition: all linear 0.5s;
+}
+
+input,
+button,
+select {
+    padding: 5px;
+    margin: 2px 2px 0 0;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+input:hover,
+button:hover,
+select:hover {
+    box-shadow: 0 0 5px 3px teal;
+}
+
+form {
+    margin: 0 auto;
+    width: fit-content;
+    background-color: lightcyan;
+    border: 1px solid cyan;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    border: 1px solid rgb(206, 191, 191);
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+}
+
+td {
+    padding: 5px;
+}
+
+caption {
+    font-size: 19px;
+    background-color: teal;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    padding: 0px 5px 5px 5px;
+    border-bottom: 1px solid cyan;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+td a,
+button {
+    background-color: teal;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
