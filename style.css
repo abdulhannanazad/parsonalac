@@ -1,1 +1,101 @@
+   .cardfooter {
+        border-top: 1px solid cyan;
+        padding: 5px;
+    }
 
+    .cardbody {
+        padding: 5px 5px 50px 5px;
+        background-color: white;
+    }
+
+    .cardtitle {
+        padding: 5px;
+        border-bottom: 1px solid cyan;
+        text-align: center;
+    }
+
+    .card {
+        background-color: lightcyan;
+        border: 1px solid cyan;
+        border-radius: 5px;
+        margin: 10px;
+        width: 30%;
+    }
+
+    .cardholder {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .labalebar p {
+        padding: 5px;
+        font-size: 20px;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    .labalebar {
+        background-color: teal;
+        display: grid;
+        grid-template-columns: 33% 34% 33%;
+    }
+
+    .contentbar {
+        margin-left: 180px;
+    }
+
+    nav a::before {
+        content: "🌿 ";
+    }
+
+    a:hover {
+        background-color: blue;
+        color: white;
+    }
+
+    nav a {
+        color: rgb(0, 0, 0);
+        font-family: sans-serif;
+        text-transform: uppercase;
+        padding: 10px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(73, 191, 124);
+        position: sticky;
+    }
+
+    .slidebarbar a::before {
+        content: "✔ ";
+    }
+
+    .slidebarbar a {
+        display: block;
+        line-height: 30px;
+        color: white;
+        font-family: sans-serif;
+        text-transform: uppercase;
+    }
+
+    .slidebarbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 180px;
+        height: 100vh;
+        background-color: teal;
+        padding: 5px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all linear 0.5s;
+    }
