@@ -37,11 +37,74 @@
             <a href="#">report</a>
             <a href="#">data manage</a>
         </nav>
-    </div>
+
+        <div class="cardholder">
+            <div class="card">
+                <div class="cardtitle">daily income</div>
+                <div class="cardbody">
+                    <u>
+                        <h4>income title:</h4>
+                    </u><br>
+                    <p>genarel: 1500/-</p>
+                    <p>monthly: 630/-</p>
+                    <p>others: 450/-</p>
+                    <hr>
+                    total = 6000/-
+                </div>
+                <div class="cardfooter">valovabe chola jabe</div>
+            </div><!-- card -->
+
+            <div class="card">
+                <div class="cardtitle">daily income</div>
+                <div class="cardbody">
+                    <u>
+                        <h4>income title:</h4>
+                    </u><br>
+                    <p>genarel: 1500/-</p>
+                    <p>monthly: 630/-</p>
+                    <p>others: 450/-</p>
+                    <hr>
+                    total = 6000/-
+                </div>
+                <div class="cardfooter">valovabe chola jabe</div>
+            </div><!-- card -->
+
+        </div><!-- cardholder -->
+
+    </div><!-- contentbar -->
 </body>
 
 </html>
 <style>
+    .cardfooter {
+        border-top: 1px solid cyan;
+        padding: 5px;
+    }
+
+    .cardbody {
+        padding: 5px 5px 50px 5px;
+        background-color: white;
+    }
+
+    .cardtitle {
+        padding: 5px;
+        border-bottom: 1px solid cyan;
+        text-align: center;
+    }
+
+    .card {
+        background-color: lightcyan;
+        border: 1px solid cyan;
+        border-radius: 5px;
+        margin: 10px;
+        width: 30%;
+    }
+
+    .cardholder {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .labalebar p {
         padding: 5px;
         font-size: 20px;
@@ -104,11 +167,14 @@
         padding: 5px;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         transition: all linear 0.5s;
-        text-decoration: none;
     }
 </style>
