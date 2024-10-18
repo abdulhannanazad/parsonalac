@@ -30,7 +30,6 @@
 .labalebar p {
     padding: 5px;
     font-size: 20px;
-    text-transform: capitalize;
     text-align: center;
 }
 
@@ -55,8 +54,6 @@ a:hover {
 
 nav a {
     color: rgb(0, 0, 0);
-    font-family: sans-serif;
-    text-transform: uppercase;
     padding: 10px;
 }
 
@@ -75,8 +72,6 @@ nav {
     display: block;
     line-height: 30px;
     color: white;
-    font-family: sans-serif;
-    text-transform: uppercase;
 }
 
 .slidebarbar {
@@ -99,6 +94,8 @@ a {
     box-sizing: border-box;
     outline: none;
     transition: all linear 0.5s;
+    text-transform: capitalize;
+    font-family: sans-serif;
 }
 
 input,
